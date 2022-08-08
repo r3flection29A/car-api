@@ -1,10 +1,13 @@
 FROM node
 
-ENV MONGO_DB_USERNAME=admin \
-    MONGO_DB_PWD=password
-
 RUN mkdir -p /home/app
 
+COPY package*.json .
+
+RUN yarn
+
 COPY . /home/app
+
+EXPOSE 3000
 
 CMD ["yarn", "dev"]
