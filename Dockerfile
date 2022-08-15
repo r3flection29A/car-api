@@ -2,12 +2,12 @@ FROM node
 
 RUN mkdir -p /home/app
 
-COPY package*.json .
+COPY package*.json ./
 
-RUN yarn
+RUN npm
 
 COPY . /home/app
 
 EXPOSE 3000
 
-CMD ["yarn", "dev"]
+CMD ["npm","run","dev"]
